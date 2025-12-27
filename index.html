@@ -115,12 +115,16 @@ l<!DOCTYPE html>
 	<script src="vendor/countdowntime/moment-timezone-with-data.min.js"></script>
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 	<script>
+		const firstDate = new Date(2025, 1, 1);
+		const secondDate = Date.now();
+
+		const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
 		$('.cd100').countdown100({
 			/*Set Endtime here*/
 			/*Endtime must be > current time*/
 			endtimeYear: 0,
 			endtimeMonth: 0,
-			endtimeDate: Date(2026, 1, 1)-Date.now(),
+			endtimeDate: diffDays,
 			endtimeHours: 22,
 			endtimeMinutes: 26,
 			endtimeSeconds: 0,
