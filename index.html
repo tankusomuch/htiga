@@ -115,18 +115,20 @@ l<!DOCTYPE html>
 	<script src="vendor/countdowntime/moment-timezone-with-data.min.js"></script>
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 	<script>
-		const firstDate = new Date(2025, 1, 1);
+		const firstDate = new Date(2026, 1, 1);
 		const secondDate = Date.now();
 
 		const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+		const diffHours = Math.round(Math.abs((firstDate - secondDate) / oneHour));
+		const diffMinutes = Math.round(Math.abs((firstDate - secondDate) / oneMinute));
 		$('.cd100').countdown100({
 			/*Set Endtime here*/
 			/*Endtime must be > current time*/
 			endtimeYear: 0,
 			endtimeMonth: 0,
 			endtimeDate: diffDays,
-			endtimeHours: 22,
-			endtimeMinutes: 26,
+			endtimeHours: diffHours,
+			endtimeMinutes: diffMinutes,
 			endtimeSeconds: 0,
 			// timeZone: "" 
 			timeZone: "Indonesia/Jakarta"
